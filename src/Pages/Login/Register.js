@@ -11,7 +11,6 @@ const Register = () => {
       event.preventDefault();
       const form = event.target;
       const name = form.name.value;
-      const photoURL = form.photoURL.value;
       const email = form.email.value;
       const password = form.password.value;
   
@@ -20,7 +19,7 @@ const Register = () => {
           const user = result.user;
           setError("");
           form.reset();
-          handleUpdateUserProfile(name, photoURL);
+          handleUpdateUserProfile(name);
         })
         .catch((error) => {
           console.error(error);
@@ -48,6 +47,17 @@ const Register = () => {
           <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100 py-20">
             <h1 className="text-5xl text-center font-bold">Register</h1>
             <form onSubmit={handleSubmit} className="card-body">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  className="input input-bordered"
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -79,7 +89,7 @@ const Register = () => {
               </div>
             </form>
             <p className="text-center">
-              New to Homo Kitchen{" "}
+            Already Have an Account{" "}
               <Link className="text-orange-600 font-bold" to="/login">
                 Login
               </Link>

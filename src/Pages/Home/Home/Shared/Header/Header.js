@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { FaBiking } from 'react-icons/fa';
+import { AuthContext } from "../../../../../Contexts/AuthProvider/AuthProvider";
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () =>{
+        logOut()
+        .then(() =>{})
+        .ctach(error => console.error(error))
+    }
   return (
     <div>
       <div className="navbar bg-base-100 mb-12">
@@ -24,7 +32,19 @@ const Header = () => {
               <Link to=''>Blogs</Link>
             </li>
             <li>
-              <Link to='/login'>Login</Link>
+            <Link to="">
+            {
+                user?.uid ?
+                <>
+                <span></span>
+                <button onClick={handleLogOut} variant="danger">Log Out</button>
+                </>
+                :
+                <>
+                    <Link style={{textDecoration: 'none'}} className='me-2' to='/login'>Login</Link>
+                </>
+            }
+            </Link>
             </li>
           </ul>
         </div>
