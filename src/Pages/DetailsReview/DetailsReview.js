@@ -31,7 +31,7 @@ const DetailsReview = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("Order placed successfully");
+          alert("Added successfully");
           form.reset();
         }
       })

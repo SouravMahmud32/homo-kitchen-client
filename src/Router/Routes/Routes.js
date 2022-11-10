@@ -9,48 +9,58 @@ import Home from "../../Pages/Home/Home/Home";
 import AllServices from "../../Pages/Home/Services/AllServices";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Login/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: <Main></Main>,
-      errorElement: <Errorpage></Errorpage>,
-      children: [
-        {
-            path: '/',
-            element: <Home></Home>
-        },
-        {
-            path: '/login',
-            element:<Login></Login>
-        },
-        {
-            path: '/register',
-            element: <Register></Register>
-        },
-        {
-            path: '/allservices',
-            element: <AllServices></AllServices>
-        },
-        {
-            path: '/details/:id',
-            element: <DetailsReview></DetailsReview>,
-            loader: ({params})=> fetch(`http://localhost:5000/services/${params.id}`)
-        },
-        {
-            path: '/addservice',
-            element: <AddService></AddService>
-        },
-        {
-            path: '/addreview',
-            element: <AddReview></AddReview>
-        },
-        {
-            path: '/blogs',
-            element: <Blogs></Blogs>
-        }
-      ]
-    }
-  ]);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <Errorpage></Errorpage>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/register",
+        element: <Register></Register>,
+      },
+      {
+        path: "/allservices",
+        element: <AllServices></AllServices>,
+      },
+      {
+        path: "/details/:id",
+        element: <DetailsReview></DetailsReview>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
+      },
+      {
+        path: "/addservice",
+        element: (
+          <PrivateRoute>
+            <AddService></AddService>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addreview",
+        element: (
+          <PrivateRoute>
+            <AddReview></AddReview>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/blogs",
+        element: <Blogs></Blogs>,
+      },
+    ],
+  },
+]);
 
-  export default router;
+export default router;

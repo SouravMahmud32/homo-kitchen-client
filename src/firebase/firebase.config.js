@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCWNHfUBQlQOvOLASJj1wHPcIahHEO7T6I",
-  authDomain: "homo-kitchen.firebaseapp.com",
-  projectId: "homo-kitchen",
-  storageBucket: "homo-kitchen.appspot.com",
-  messagingSenderId: "294383922125",
-  appId: "1:294383922125:web:c3e4d3aaf2bde3a1e8b284"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId
 };
 
 // Initialize Firebase
