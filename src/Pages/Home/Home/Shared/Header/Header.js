@@ -23,9 +23,6 @@ const Header = () => {
               <Link to='/'>Home</Link>
             </li>
             <li>
-              <Link to=''>Foods</Link>
-            </li>
-            <li>
               <Link to='/allservices'>Services</Link>
             </li>
             <li>
@@ -36,6 +33,12 @@ const Header = () => {
             {
                 user?.uid ?
                 <>
+                <li>
+                    <Link>Add a Review</Link>
+                </li>
+                <li>
+                    <Link to='/addservice'>Add a Service</Link>
+                </li>
                 <span></span>
                 <button onClick={handleLogOut} variant="danger">Log Out</button>
                 </>
