@@ -1,3 +1,16 @@
+# HomoKitchen
+***
+Homo kitchen Serves all kind of Bengali food.
+Here you can order through online. And Our delivery man deliver the food at your door step.
+
+## Table of technologies
+1. react router dom
+2.node
+3.mongodeb
+
+###
+"(*)"Live Link: https://homo-kitchen.web.app/
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
