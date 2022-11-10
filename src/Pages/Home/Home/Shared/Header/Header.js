@@ -34,7 +34,7 @@ const Header = () => {
                 user?.uid ?
                 <>
                 <li>
-                    <Link>Add a Review</Link>
+                    <Link to='/addreview'>Add a Review</Link>
                 </li>
                 <li>
                     <Link to='/addservice'>Add a Service</Link>

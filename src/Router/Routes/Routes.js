@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
+import AddReview from "../../Pages/AddReview/AddReview";
 import AddService from "../../Pages/AddService/AddService";
 import DetailsReview from "../../Pages/DetailsReview/DetailsReview";
 import Home from "../../Pages/Home/Home/Home";
@@ -36,6 +37,10 @@ import Register from "../../Pages/Login/Register";
         {
             path: '/addservice',
             element: <AddService></AddService>
+        },
+        {
+            path: '/addreview',
+            element: <AddReview></AddReview>
         }
       ]
     }
