@@ -3,6 +3,7 @@ import Main from "../../Layout/Main";
 import AddReview from "../../Pages/AddReview/AddReview";
 import AddService from "../../Pages/AddService/AddService";
 import DetailsReview from "../../Pages/DetailsReview/DetailsReview";
+import Errorpage from "../../Pages/Errorpage/Errorpage";
 import Home from "../../Pages/Home/Home/Home";
 import AllServices from "../../Pages/Home/Services/AllServices";
 import Login from "../../Pages/Login/Login";
@@ -12,6 +13,7 @@ import Register from "../../Pages/Login/Register";
     {
       path: '/',
       element: <Main></Main>,
+      errorElement: <Errorpage></Errorpage>,
       children: [
         {
             path: '/',
