@@ -20,7 +20,7 @@ const DetailsReview = () => {
       message,
     };
 
-    fetch("http://localhost:5000/services", {
+    fetch("https://homo-kitchen-server.vercel.app/services", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -49,14 +49,16 @@ const DetailsReview = () => {
           <p className="text-2xl text-orange-600 font-semibold">
             Price: ${price}
           </p>
-          <p>
-            {description}
-          </p>
+          <p>{description}</p>
         </div>
       </div>
       <form onSubmit={handlePlaceOrder}>
-        <h2 className="text-4xl font-bold">You are about to review on: {title}</h2>
-        <h4 className="text-3xl text-orange-600 font-semibold">Price: {price}</h4>
+        <h2 className="text-4xl font-bold">
+          You are about to review on: {title}
+        </h2>
+        <h4 className="text-3xl text-orange-600 font-semibold">
+          Price: {price}
+        </h4>
         <div className="grid grid-cols-1 lg:grid-cols-1 gap-4 p-5">
           <input
             name="firstName"

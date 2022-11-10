@@ -37,7 +37,7 @@ const router = createBrowserRouter([
         path: "/details/:id",
         element: <DetailsReview></DetailsReview>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`),
+          fetch(`https://homo-kitchen-server.vercel.app/services/${params.id}`),
       },
       {
         path: "/addservice",
